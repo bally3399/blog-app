@@ -3,7 +3,6 @@ package africa.semicolon.blog.dtos.request;
 import lombok.Data;
 
 @Data
-public class DeleteCommentRequest {
+public class LogoutUserRequest {
     private String username;
-    private String id;
 }

@@ -1,2 +1,13 @@
-package africa.semicolon.blog.dtos.response;public class CreatePostResponse {
+package africa.semicolon.blog.dtos.response;
+
+import lombok.Data;
+
+@Data
+public class CreatePostResponse {
+    private String Id;
+    private String title;
+    private String content;
+    private String date;
+
+
 }

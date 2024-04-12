@@ -1,2 +1,10 @@
-package africa.semicolon.blog.dtos.request;public class CreatePostRequest {
+package africa.semicolon.blog.dtos.request;
+
+import lombok.Data;
+
+@Data
+public class CreatePostRequest {
+    private String author;
+    private String title;
+    private String content;
 }

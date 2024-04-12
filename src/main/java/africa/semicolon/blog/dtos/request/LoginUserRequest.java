@@ -1,2 +1,11 @@
-package africa.semicolon.blog.dtos.request;public class LoginUserRequest {
+package africa.semicolon.blog.dtos.request;
+
+import lombok.Data;
+
+@Data
+public class LoginUserRequest {
+    private String username;
+    private String password;
+
+
 }
