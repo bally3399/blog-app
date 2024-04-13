@@ -99,14 +99,6 @@ public class UserController {
         }
     }
 
-//    @PostMapping("/view")
-//    public ResponseEntity<?> view(@RequestBody ViewRequest viewRequest){
-//        try{
-//             result = userServices.view(viewRequest);
-//            return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
-//        }catch (BlogAppException | InputMismatchException e){
-//            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
-//        }
-//    }
+
 
 }
