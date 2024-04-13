@@ -12,5 +12,6 @@ public class Comment {
     private String id;
     private String commenter;
     private String comment;
+    private String title;
     private LocalDateTime timeCreated = LocalDateTime.now();
 }

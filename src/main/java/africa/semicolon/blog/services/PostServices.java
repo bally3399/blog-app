@@ -5,7 +5,6 @@ import africa.semicolon.blog.dtos.request.*;
 import africa.semicolon.blog.dtos.response.CreateCommentResponse;
 import africa.semicolon.blog.dtos.response.CreatePostResponse;
 import africa.semicolon.blog.dtos.response.EditPostResponse;
-import africa.semicolon.blog.dtos.response.ViewResponse;
 
 import java.util.List;
 
@@ -24,5 +23,5 @@ public interface PostServices {
 
     String deleteComment(DeleteCommentRequest deleteCommentRequest);
 
-    ViewResponse view(ViewRequest viewRequest);
+    void view(ViewRequest viewRequest);
 }

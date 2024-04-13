@@ -6,8 +6,7 @@ import africa.semicolon.blog.data.repositories.PostRepository;
 import africa.semicolon.blog.data.repositories.UserRepository;
 import africa.semicolon.blog.data.repositories.ViewRepository;
 import africa.semicolon.blog.dtos.request.*;
-import africa.semicolon.blog.exceptions.LoginUserException;
-import africa.semicolon.blog.exceptions.UsernameAlreadyExistsException;
+import africa.semicolon.blog.exceptions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +24,13 @@ public class UserServicesImplTest {
     @Autowired
     private CommentRepository commentRepository;
     @Autowired
-    private UserServicesImpl userServicesImpl;
-    @Autowired
     private ViewRepository viewRepository;
 
     @BeforeEach
     public void setUp(){
         userRepository.deleteAll();
         postRepository.deleteAll();
+        commentRepository.deleteAll();
     }
 
     @Test
@@ -306,7 +304,7 @@ public class UserServicesImplTest {
         userServices.createComment(commentRequest);
 
         ViewRequest viewRequest = new ViewRequest();
-        viewRequest.setViewer(user);
+        viewRequest.setViewer("username");
         userServices.view(viewRequest);
 
         assertEquals(1, viewRepository.count());
@@ -332,4 +330,120 @@ public class UserServicesImplTest {
         assertTrue(userServices.findByUser("username").isLoggedIn());
 
     }
- }
+
+    @Test
+    public void registerUserWithEmptyString_throwInvalidUsernameExceptionTest(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("");
+        registerUserRequest.setLastName("lastname");
+        registerUserRequest.setPassword("password");
+        registerUserRequest.setUsername("username");
+        try {
+            userServices.registerUser(registerUserRequest);
+        }catch (InvalidUsernameException e){
+            assertEquals(e.getMessage(),"firstname must not be empty");
+        }
+    }
+    @Test
+    public void registerUserWithEmptyString_throwInvalidUsernameException1Test(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("firstname");
+        registerUserRequest.setLastName("");
+        registerUserRequest.setPassword("password");
+        registerUserRequest.setUsername("username");
+        try {
+            userServices.registerUser(registerUserRequest);
+        }catch (InvalidUsernameException e){
+            assertEquals(e.getMessage(),"Lastname must not be empty");
+        }
+    }
+    @Test
+    public void registerUserWithEmptyString_throwInvalidUsernameException2Test(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("firstname");
+        registerUserRequest.setLastName("lastname");
+        registerUserRequest.setPassword("");
+        registerUserRequest.setUsername("username");
+        try {
+            userServices.registerUser(registerUserRequest);
+        }catch (IncorrectPassword e){
+            assertEquals(e.getMessage(),"password must not be empty");
+        }
+    }
+
+    @Test
+    public void registerUserWithEmptyString_throwInvalidUsernameException3Test(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("firstname");
+        registerUserRequest.setLastName("lastname");
+        registerUserRequest.setPassword("password");
+        registerUserRequest.setUsername("");
+        try {
+            userServices.registerUser(registerUserRequest);
+        }catch (InvalidUsernameException e){
+            assertEquals(e.getMessage(),"Username must not be empty");
+        }
+    }
+
+    @Test
+    public void registerUser_loginUserWithEmptyString_throwIncorrectPasswordException(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("firstname");
+        registerUserRequest.setLastName("lastname");
+        registerUserRequest.setPassword("password");
+        registerUserRequest.setUsername("username");
+        userServices.registerUser(registerUserRequest);
+
+        LoginUserRequest loginRequest = new LoginUserRequest();
+        loginRequest.setPassword("");
+        loginRequest.setUsername("username");
+        try {
+            userServices.login(loginRequest);
+        }catch(IncorrectPassword e) {
+            assertEquals(e.getMessage(), "password must not be empty");
+        }
+    }
+
+    @Test
+    public void registerUser_loginUserWithEmptyString_throwInvalidUsernameException(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("firstname");
+        registerUserRequest.setLastName("lastname");
+        registerUserRequest.setPassword("password");
+        registerUserRequest.setUsername("username");
+        userServices.registerUser(registerUserRequest);
+
+        LoginUserRequest loginRequest = new LoginUserRequest();
+        loginRequest.setPassword("password");
+        loginRequest.setUsername("");
+        try {
+            userServices.login(loginRequest);
+        }catch(InvalidUsernameException e) {
+            assertEquals(e.getMessage(), "new user");
+        }
+    }
+    @Test
+    public void registerUser_login_createPostWithEmptyString_throwIncorrectTitleExceptionTest(){
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setFirstName("firstname");
+        registerUserRequest.setLastName("lastname");
+        registerUserRequest.setPassword("password");
+        registerUserRequest.setUsername("username");
+        userServices.registerUser(registerUserRequest);
+
+        LoginUserRequest loginRequest = new LoginUserRequest();
+        loginRequest.setPassword("password");
+        loginRequest.setUsername("username");
+        userServices.login(loginRequest);
+
+        CreatePostRequest createPost = new CreatePostRequest();
+        createPost.setTitle("");
+        createPost.setContent("content");
+        createPost.setAuthor("username");
+        try {
+            userServices.createPost(createPost);
+        }catch(IncorrectTitleException e){
+            assertEquals(e.getMessage(), "Title not found");
+        }
+    }
+}

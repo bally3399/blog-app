@@ -4,41 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d98e86de-4bf9-4bd4-ada4-8a6828a2813a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/LogoutUserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/LogoutUserResponse.java" afterDir="false" />
+    <list default="true" id="d98e86de-4bf9-4bd4-ada4-8a6828a2813a" name="Changes" comment="blog">
+      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/IncorrectTitleException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/blog/data/repositories/CommentRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/model/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/ViewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/data/repositories/ViewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/CreateCommentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/CreateCommentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/CreatePostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/CreatePostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/DeleteCommentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/DeleteCommentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/DeletePostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/DeletePostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/EditPostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/EditPostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/LoginUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/LoginUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/RegisterUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/RegisterUserRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/ViewRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/request/ViewRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/CreateCommentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/CreateCommentResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/CreatePostResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/CreatePostResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/EditPostResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/EditPostResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/LoginResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/RegisterUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/RegisterUserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/ViewResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/ViewResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/BlogAppException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/BlogAppException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/IncorrectPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/IncorrectPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/LoginUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/LoginUserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/PostNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/PostNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/UsernameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/exceptions/UsernameAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/dtos/response/ViewResponse.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/CommentServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/CommentServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/CommentServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/CommentServicesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/PostServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/PostServices.java" afterDir="false" />
@@ -48,9 +27,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/ViewServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/ViewServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/ViewServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/services/ViewServicesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/utils/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/blog/services/UserServicesImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/blog/services/UserServicesImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -69,18 +46,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "bally3399"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bally3399&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/bally3399/blog-app.git",
-    "accountId": "eadaa87a-b92b-46c1-a602-24076f443d9f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bally3399/blog-app.git&quot;,
+    &quot;accountId&quot;: &quot;eadaa87a-b92b-46c1-a602-24076f443d9f&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -93,6 +70,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #10.executor": "Run",
+    "HTTP Request.generated-requests | #11.executor": "Run",
+    "HTTP Request.generated-requests | #12.executor": "Run",
+    "HTTP Request.generated-requests | #13.executor": "Run",
     "HTTP Request.generated-requests | #14.executor": "Run",
     "HTTP Request.generated-requests | #15.executor": "Run",
     "HTTP Request.generated-requests | #16.executor": "Run",
@@ -100,21 +81,33 @@
     "HTTP Request.generated-requests | #18.executor": "Run",
     "HTTP Request.generated-requests | #19.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #20.executor": "Run",
+    "HTTP Request.generated-requests | #21.executor": "Run",
+    "HTTP Request.generated-requests | #22.executor": "Run",
+    "HTTP Request.generated-requests | #23.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #5.executor": "Run",
     "HTTP Request.generated-requests | #6.executor": "Run",
     "HTTP Request.generated-requests | #7.executor": "Run",
+    "HTTP Request.generated-requests | #8.executor": "Run",
+    "HTTP Request.generated-requests | #9.executor": "Run",
     "JUnit.UserServicesImplTest.executor": "Run",
     "JUnit.UserServicesImplTest.registerTest_createPost_editPostTest.executor": "Run",
     "JUnit.UserServicesImplTest.registerTwoUsers.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser.executor": "Run",
     "JUnit.UserServicesImplTest.registerUserTwiceWithSameInputTest.executor": "Run",
+    "JUnit.UserServicesImplTest.registerUserWithEmptyStringTest.executor": "Run",
+    "JUnit.UserServicesImplTest.registerUserWithEmptyString_throwInvalidUsernameException1Test.executor": "Run",
+    "JUnit.UserServicesImplTest.registerUserWithEmptyString_throwInvalidUsernameException2Test.executor": "Run",
+    "JUnit.UserServicesImplTest.registerUserWithEmptyString_throwInvalidUsernameException3Test.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_createPostWithoutLogin_throwLoginUserException.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_loginTest.executor": "Run",
+    "JUnit.UserServicesImplTest.registerUser_loginUserWithEmptyString_throwInvalidUsernameException.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createCommentTest.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createComment_UpdateCommentTest.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createComment_view.executor": "Run",
+    "JUnit.UserServicesImplTest.registerUser_login_createPostWithEmptyString_throwIncorrectTitleExceptionTest.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_login_createPost_deletePostTest.executor": "Run",
     "JUnit.UserServicesImplTest.registerUser_login_logoutTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -145,45 +138,43 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="africa.semicolon.blog.data.repositories" />
       <recent name="africa.semicolon.blog.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createCommentTest">
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+  <component name="RunManager" selected="HTTP Request.generated-requests | #23">
+    <configuration name="generated-requests | #20" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="20" requestIdentifier="#20" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+    <configuration name="generated-requests | #21" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="21" requestIdentifier="#21" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
+    <configuration name="generated-requests | #22" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="22" requestIdentifier="#22" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+    <configuration name="generated-requests | #23" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="23" requestIdentifier="#23" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="UserServicesImplTest.registerUser_loginUser_createPost_createCommentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="blodApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="africa.semicolon.blog.Main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="africa.semicolon.blog.services.*" />
+          <option name="PATTERN" value="africa.semicolon.blog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="africa.semicolon.blog.services" />
-      <option name="MAIN_CLASS_NAME" value="africa.semicolon.blog.services.UserServicesImplTest" />
-      <option name="METHOD_NAME" value="registerUser_loginUser_createPost_createCommentTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createCommentTest" />
-        <item itemvalue="HTTP Request.generated-requests | #5" />
-        <item itemvalue="HTTP Request.generated-requests | #4" />
-        <item itemvalue="HTTP Request.generated-requests | #3" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="HTTP Request.generated-requests | #23" />
+        <item itemvalue="HTTP Request.generated-requests | #22" />
+        <item itemvalue="HTTP Request.generated-requests | #21" />
+        <item itemvalue="HTTP Request.generated-requests | #20" />
       </list>
     </recent_temporary>
   </component>
@@ -205,11 +196,25 @@
       <updated>1712822275529</updated>
       <workItem from="1712822277207" duration="16005000" />
       <workItem from="1712842201811" duration="15516000" />
-      <workItem from="1712899691594" duration="18075000" />
+      <workItem from="1712899691594" duration="25811000" />
+      <workItem from="1712991924122" duration="12158000" />
     </task>
+    <task id="LOCAL-00001" summary="blog">
+      <option name="closed" value="true" />
+      <created>1712919823099</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712919823099</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog" />
   </component>
 </project>

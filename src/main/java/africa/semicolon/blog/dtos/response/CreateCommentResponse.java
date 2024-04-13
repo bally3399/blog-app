@@ -6,6 +6,6 @@ import lombok.Data;
 public class CreateCommentResponse {
     private String commenter;
     private String comment;
-    private String id;
-    private String title;
+//    private String id;
+//    private String title;
 }

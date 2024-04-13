@@ -8,4 +8,6 @@ public interface CommentRepository extends MongoRepository<Comment, String> {
     Comment findByCommenter(String username);
 
     Comment findCommentById(String id);
+
+    Comment findByTitle(String title);
 }

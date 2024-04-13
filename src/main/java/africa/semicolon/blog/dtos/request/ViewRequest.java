@@ -5,5 +5,5 @@ import lombok.Data;
 
 @Data
 public class ViewRequest {
-    private User viewer;
+    private String viewer;
 }

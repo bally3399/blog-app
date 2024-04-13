@@ -5,10 +5,7 @@ import africa.semicolon.blog.data.model.User;
 import africa.semicolon.blog.data.repositories.UserRepository;
 import africa.semicolon.blog.dtos.request.*;
 import africa.semicolon.blog.dtos.response.*;
-import africa.semicolon.blog.exceptions.IncorrectPassword;
-import africa.semicolon.blog.exceptions.InvalidUsernameException;
-import africa.semicolon.blog.exceptions.LoginUserException;
-import africa.semicolon.blog.exceptions.UsernameAlreadyExistsException;
+import africa.semicolon.blog.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,30 +24,44 @@ public class UserServicesImpl implements UserServices{
 
     @Override
     public RegisterUserResponse registerUser(RegisterUserRequest request) {
-        request.setUsername(request.getUsername());
+        validateRegistration(request);
         validate(request.getUsername());
+        request.setUsername(request.getUsername());
         User user = map(request);
         RegisterUserResponse response = map(user);
         userRepository.save(user);
         return response;
     }
 
+    private static void validateRegistration(RegisterUserRequest request) {
+        if(request.getUsername().matches("[a-zA-Z]")) throw new InvalidUsernameException("Username must not be empty");
+        if(request.getFirstName().matches("[a-zA-Z]")) throw new InvalidUsernameException("firstname must not be empty");
+        if(request.getLastName().matches("[a-zA-Z]")) throw new InvalidUsernameException("Lastname must not be empty");
+        if(request.getPassword().trim().isEmpty()) throw new IncorrectPassword("password must not be empty");
+    }
+
     @Override
     public LoginResponse login(LoginUserRequest loginRequest) {
         User newUser = userRepository.findByUsername(loginRequest.getUsername());
-        if (!newUser.getPassword().equals(loginRequest.getPassword())) {
-            throw new IncorrectPassword("Incorrect password");
-        }
+        if(newUser == null) throw new InvalidUsernameException("new user");
+        validateLogin(loginRequest, newUser);
         newUser.setLoggedIn(true);
         LoginResponse response = mapLogin(newUser);
         userRepository.save(newUser);
         return response;
     }
 
+    private static void validateLogin(LoginUserRequest loginRequest,User newUser) {
+        if(loginRequest.getPassword().trim().isEmpty()) throw new IncorrectPassword("password must not be empty");
+        if(loginRequest.getUsername().matches("[a-zA-Z]"))throw new InvalidUsernameException("Username must not be empty");
+        if (!newUser.getPassword().equals(loginRequest.getPassword())) throw new IncorrectPassword("Incorrect password");
+
+    }
+
     @Override
     public CreatePostResponse createPost(CreatePostRequest createPost) {
         User user = userRepository.findByUsername(createPost.getAuthor());
-        if(!user.isLoggedIn()) throw new LoginUserException("You must be logged in");
+        validatePost(createPost, user);
         CreatePostResponse postResponse = postServices.createPost(createPost);
         Post post = postServices.findPostByTitle(createPost.getTitle());
         List<Post> posts = user.getPosts();
@@ -59,6 +70,17 @@ public class UserServicesImpl implements UserServices{
         userRepository.save(user);
         return postResponse;
     }
+
+    private static void validatePost(CreatePostRequest createPost, User user) {
+        if (user == null) throw new IncorrectPassword("Username is not valid");
+        if(user.getUsername().matches("[a-zA-Z]")) throw new InvalidUsernameException("Username must not be empty");
+        if(user.getUsername().trim().isEmpty()) throw new InvalidUsernameException("Username must not be empty");
+        if(!user.isLoggedIn()) throw new LoginUserException("You must be logged in");
+        if(createPost.getAuthor().matches("[a-zA-Z]")) throw new InvalidUsernameException("Username must not be empty");
+        if(createPost.getContent().trim().isEmpty()) throw new IncorrectTitleException("Content not found");
+        if(createPost.getTitle().trim().isEmpty()) throw new IncorrectTitleException("Title not found");
+    }
+
 
     @Override
     public List<Post> findPostForUser(String username) {
@@ -87,12 +109,18 @@ public class UserServicesImpl implements UserServices{
     }
 
     @Override
-    public CreateCommentResponse createComment(CreateCommentRequest commentRequest) {
+    public String createComment(CreateCommentRequest commentRequest) {
         User user = userRepository.findByUsername(commentRequest.getCommenter());
-        if(!user.getUsername().equals(commentRequest.getCommenter())) throw new InvalidUsernameException("Enter username");
-        CreateCommentResponse response = postServices.createComment(commentRequest);
+        if(user == null) throw new InvalidUsernameException("username must not be null");
+        if(user.getUsername().equals(commentRequest.getCommenter())) throw new InvalidUsernameException("Enter username");
+        if(user.getUsername().matches("[a-zA-Z]+")) throw new InvalidUsernameException("Enter username");
+        if(commentRequest.getCommenter().isEmpty()) throw new InvalidUsernameException("username must not be empty");
+        if(commentRequest.getTitle().isEmpty()) throw new InvalidUsernameException("username must not be empty");
+        if(commentRequest.getComment().isEmpty()) throw new InvalidUsernameException("comment must not be empty");
+
+        postServices.createComment(commentRequest);
         userRepository.save(user);
-        return response;
+        return "Successful";
     }
 
     @Override
@@ -101,8 +129,8 @@ public class UserServicesImpl implements UserServices{
     }
 
     @Override
-    public ViewResponse view(ViewRequest viewRequest) {
-        return postServices.view(viewRequest);
+    public void view(ViewRequest viewRequest) {
+        postServices.view(viewRequest);
     }
 
     @Override

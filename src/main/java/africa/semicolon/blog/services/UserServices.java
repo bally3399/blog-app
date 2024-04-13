@@ -24,11 +24,11 @@ public interface UserServices {
 
     User findByUser(String username);
 
-    CreateCommentResponse createComment(CreateCommentRequest commentRequest);
+    String createComment(CreateCommentRequest commentRequest);
 
     String deleteComment(DeleteCommentRequest deleteCommentRequest);
 
-    ViewResponse view(ViewRequest viewRequest);
+    void view(ViewRequest viewRequest);
 
     LogoutUserResponse logout(LogoutUserRequest logoutRequest);
 }

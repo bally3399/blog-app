@@ -26,7 +26,7 @@ public class UserController {
         try{
             RegisterUserResponse result = userServices.registerUser(registerUserRequest);
             return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
-        }catch (BlogAppException | InputMismatchException e){
+        }catch (BlogAppException e){
             return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
         }
     }
@@ -35,7 +35,7 @@ public class UserController {
         try{
             LoginResponse result = userServices.login(loginUserRequest);
             return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
-        }catch (BlogAppException | InputMismatchException e){
+        }catch (BlogAppException e){
             return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
         }
     }
@@ -45,7 +45,7 @@ public class UserController {
         try{
             LogoutUserResponse result = userServices.logout(logoutUserRequest);
             return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
-        }catch (BlogAppException | InputMismatchException e){
+        }catch (BlogAppException e){
             return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
         }
     }
@@ -82,7 +82,7 @@ public class UserController {
     @PostMapping("/createComment")
     public ResponseEntity<?> createComment(@RequestBody CreateCommentRequest createCommentRequest){
         try{
-            CreateCommentResponse result = userServices.createComment(createCommentRequest);
+            String result = userServices.createComment(createCommentRequest);
             return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
         }catch (BlogAppException | InputMismatchException e){
             return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
@@ -99,14 +99,14 @@ public class UserController {
         }
     }
 
-    @PostMapping("/view")
-    public ResponseEntity<?> view(@RequestBody ViewRequest viewRequest){
-        try{
-            ViewResponse result = userServices.view(viewRequest);
-            return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
-        }catch (BlogAppException | InputMismatchException e){
-            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
-        }
-    }
+//    @PostMapping("/view")
+//    public ResponseEntity<?> view(@RequestBody ViewRequest viewRequest){
+//        try{
+//             result = userServices.view(viewRequest);
+//            return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
+//        }catch (BlogAppException | InputMismatchException e){
+//            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
+//        }
+//    }
 
 }

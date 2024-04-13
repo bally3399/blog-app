@@ -4,12 +4,10 @@ import africa.semicolon.blog.data.model.Comment;
 import africa.semicolon.blog.data.model.Post;
 import africa.semicolon.blog.data.model.View;
 import africa.semicolon.blog.data.repositories.PostRepository;
-import africa.semicolon.blog.data.repositories.ViewRepository;
 import africa.semicolon.blog.dtos.request.*;
 import africa.semicolon.blog.dtos.response.CreateCommentResponse;
 import africa.semicolon.blog.dtos.response.CreatePostResponse;
 import africa.semicolon.blog.dtos.response.EditPostResponse;
-import africa.semicolon.blog.dtos.response.ViewResponse;
 import africa.semicolon.blog.exceptions.PostNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,11 +47,20 @@ public class PostServicesImpl implements PostServices{
     @Override
     public EditPostResponse editPost(EditPostRequest editPost) {
         Post updatePost = postRepository.findByTitle(editPost.getTitle());
+        validateInput(editPost, updatePost);
         if (editPost.getTitle()!= null && editPost.getContent() != null && editPost.getAuthor() != null){
             mapEdit(updatePost, editPost);
         }
         Post savedPost = postRepository.save(updatePost);
         return mapEdit(savedPost);
+    }
+
+    private static void validateInput(EditPostRequest editPost, Post updatePost) {
+        if(updatePost == null) throw new PostNotFoundException("No post");
+        if(editPost.getContent().trim().isEmpty()) throw new PostNotFoundException("No content");
+        if(editPost.getTitle().trim().isEmpty()) throw new PostNotFoundException("No title");
+        if(editPost.getNewTitle().trim().isEmpty()) throw new PostNotFoundException("No new title");
+        if(editPost.getNewContent().trim().isEmpty()) throw new PostNotFoundException("No new content");
     }
 
     @Override
@@ -81,6 +88,7 @@ public class PostServicesImpl implements PostServices{
         throw new PostNotFoundException("Post not found");
     }
 
+
     @Override
     public String deleteComment(DeleteCommentRequest deleteCommentRequest) {
         commentServices.deleteComment(deleteCommentRequest);
@@ -97,15 +105,13 @@ public class PostServicesImpl implements PostServices{
     }
 
     @Override
-    public ViewResponse view(ViewRequest viewRequest) {
-        Post post = postRepository.findByAuthor(viewRequest.getViewer().getUsername());
-        ViewResponse response = viewServices.view(viewRequest);
-        View view = viewServices.findViewBy(viewRequest.getViewer().getUsername());
+    public void view(ViewRequest viewRequest) {
+        Post post = postRepository.findByAuthor(viewRequest.getViewer());
+        View view = viewServices.view(viewRequest);
         List<View> views = post.getViews();
         views.add(view);
         post.setViews(views);
         postRepository.save(post);
-        return response;
     }
 
 }
