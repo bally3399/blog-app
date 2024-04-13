@@ -111,16 +111,19 @@ public class UserServicesImpl implements UserServices{
     @Override
     public String createComment(CreateCommentRequest commentRequest) {
         User user = userRepository.findByUsername(commentRequest.getCommenter());
+        validate(commentRequest, user);
+        postServices.createComment(commentRequest);
+        userRepository.save(user);
+        return "Successful";
+    }
+
+    private static void validate(CreateCommentRequest commentRequest, User user) {
         if(user == null) throw new InvalidUsernameException("username must not be null");
         if(user.getUsername().equals(commentRequest.getCommenter())) throw new InvalidUsernameException("Enter username");
         if(user.getUsername().matches("[a-zA-Z]+")) throw new InvalidUsernameException("Enter username");
         if(commentRequest.getCommenter().isEmpty()) throw new InvalidUsernameException("username must not be empty");
         if(commentRequest.getTitle().isEmpty()) throw new InvalidUsernameException("username must not be empty");
         if(commentRequest.getComment().isEmpty()) throw new InvalidUsernameException("comment must not be empty");
-
-        postServices.createComment(commentRequest);
-        userRepository.save(user);
-        return "Successful";
     }
 
     @Override

@@ -44,7 +44,6 @@ public class Mapper {
     }
     public static CreatePostResponse map(Post savePost){
         CreatePostResponse response = new CreatePostResponse();
-//        response.setId(savePost.getId());
         response.setTitle(savePost.getTitle());
         response.setContent(savePost.getContent());
         response.setDate(DateTimeFormatter.ofPattern("dd-MM-yyyy, hh:mm:ss").format(savePost.getDateCreated()));
@@ -78,8 +77,6 @@ public class Mapper {
         CreateCommentResponse response = new CreateCommentResponse();
         response.setCommenter(newComment.getCommenter());
         response.setComment(newComment.getComment());
-//        response.setId(newComment.getId());
-//        response.setTitle(newComment.getTitle());
         return response;
     }
     public static View map(ViewRequest viewRequest) {

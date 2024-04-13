@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class CreatePostResponse {
-//    private String Id;
     private String title;
     private String content;
     private String date;
