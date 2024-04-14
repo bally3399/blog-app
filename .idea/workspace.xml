@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d98e86de-4bf9-4bd4-ada4-8a6828a2813a" name="Changes" comment="blog">
+      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/blog/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,10 +123,7 @@
       <recent name="africa.semicolon.blog.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createCommentTest">
-    <configuration name="generated-requests | #23" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="23" requestIdentifier="#23" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="generated-requests | #24" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="24" requestIdentifier="#24" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -163,13 +161,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="blodApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="africa.semicolon.blog.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semicolon.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="JUnit.UserServicesImplTest.registerUser_loginUser_createPost_createCommentTest" />
         <item itemvalue="JUnit.UserServicesImplTest" />
         <item itemvalue="HTTP Request.generated-requests | #25" />
         <item itemvalue="HTTP Request.generated-requests | #24" />
-        <item itemvalue="HTTP Request.generated-requests | #23" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +207,11 @@
       <workItem from="1713012394511" duration="2394000" />
       <workItem from="1713019990639" duration="2823000" />
       <workItem from="1713025707947" duration="341000" />
+      <workItem from="1713075643123" duration="592000" />
+      <workItem from="1713083264267" duration="215000" />
+      <workItem from="1713094991334" duration="953000" />
+      <workItem from="1713103195472" duration="948000" />
+      <workItem from="1713112786975" duration="2542000" />
     </task>
     <task id="LOCAL-00001" summary="blog">
       <option name="closed" value="true" />
